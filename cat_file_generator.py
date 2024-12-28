@@ -29,8 +29,8 @@ def request_handler(tool_input, cat):
         For example, in the text: 'Generate a [file_extension] file with the content: [content]',
         the dictionary should look like:
         {
-            'file_extension': '[file_extension]',
-            'content': '[content]'
+            'file_extension': "[file_extension]",
+            'content': "[content]"
         }
 
         Now, process the following text and return a dictionary with the extracted keywords and their corresponding values:
