@@ -1,10 +1,10 @@
 {
     "name": "Cat file generator",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "This plugin generates a file with the given content",
     "author_name": "Davide Gavio",
     "author_url": "https://www.linkedin.com/in/davidegavio/",
     "plugin_url": "https://github.com/davidegavio/file_generator",
-    "tags": "cat, file, example",
+    "tags": "cat, file",
     "thumb": "https://raw.githubusercontent.com/file_generator/cat_file_generator.png"
 }
