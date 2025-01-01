@@ -71,3 +71,14 @@ def _generate_pdf(file_path: Path, file_content: str):
     
     # Save the PDF file
     c.save()
+    
+def _generate_md(file_path: Path, file_content: str):
+    '''
+    Generates a markdown file with the given content.
+
+    Args:
+        file_path (Path): The path where the markdown file will be created.
+        file_content (str): The content to be written to the markdown file.
+    '''
+    with open(file_path, 'w') as f:
+        f.write(file_content)

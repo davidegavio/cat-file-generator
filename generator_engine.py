@@ -2,7 +2,7 @@ from pathlib import Path
 
 from cat.utils import get_static_path
 
-from .generators import _generate_pdf, _generate_txt
+from .generators import _generate_md, _generate_pdf, _generate_txt
 from .utils import _generate_html_message
 
 
@@ -27,10 +27,12 @@ def handle_generation(file_name: str, file_extension: str, file_content: str):
     if file_path.exists():
         file_path.unlink()  # Remove the file if it already exists
         
-    if file_extension == 'txt':
+    if 'txt' in file_extension or 'text' in file_extension:
         _generate_txt(file_path=file_path, file_content=file_content)
     elif file_extension == 'pdf':
         _generate_pdf(file_path=file_path, file_content=file_content)
+    elif 'md' in file_extension or 'markdown' in file_extension:
+        _generate_md(file_path=file_path, file_content=file_content)
     else:
         raise ValueError("Unsupported file extension")
     
