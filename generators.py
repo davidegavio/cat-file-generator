@@ -49,19 +49,14 @@ def _generate_pdf(file_path: Path, file_content: str):
     text_x = left_margin
     text_y = page_height - top_margin
     
-    # Create a TextObject to manage the text, set the origin and font
-    text_object = c.beginText()
-    text_object.setTextOrigin(text_x, text_y)
-    text_object.setFont('Times-Roman', 12)  # Font 'Times-Roman' with size 12 pt
-    
     # Use simpleSplit to split the text content into lines
     # The text is split to fit within the usable width
     lines = utils.simpleSplit(file_content, 'Times-Roman', 12, usable_width)
     
     # Iterate over each line produced by simpleSplit
     for line in lines:
-        # Add the line to the TextObject
-        text_object.textLine(line)
+        # Add the line to the Canvas directly
+        c.drawString(text_x, text_y, line)
         
         # Update the vertical position (y) to move to the next line
         text_y -= 14  # 12 pt font height + 2 pt line spacing
@@ -73,14 +68,6 @@ def _generate_pdf(file_path: Path, file_content: str):
             
             # Reset the vertical position for the new page
             text_y = page_height - top_margin
-            
-            # Create a new TextObject for the new page and reset settings
-            text_object = c.beginText()
-            text_object.setTextOrigin(text_x, text_y)
-            text_object.setFont('Times-Roman', 12)  # Reset the font for the new page
-    
-    # Draw the TextObject on the Canvas, rendering all the text
-    c.drawText(text_object)
     
     # Save the PDF file
     c.save()
