@@ -1,6 +1,6 @@
 {
     "name": "Cat file generator",
-    "version": "0.0.8",
+    "version": "0.0.9",
     "description": "This plugin generates a file with the given content",
     "author_name": "Davide Gavio",
     "author_url": "https://www.linkedin.com/in/davidegavio/",
