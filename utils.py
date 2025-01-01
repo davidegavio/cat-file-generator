@@ -1,5 +1,7 @@
 import os
 
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 
 def _generate_html_message(file_name, file_extension, file_path):
     """
