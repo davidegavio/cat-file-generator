@@ -23,6 +23,9 @@ def handle_generation(file_name: str, file_extension: str, file_content: str):
 
     directory.mkdir(parents=True, exist_ok=True)
     file_path = directory / f'{file_name}.{file_extension}'
+    
+    if file_path.exists():
+        file_path.unlink()  # Remove the file if it already exists
         
     if file_extension == 'txt':
         _generate_txt(file_path=file_path, file_content=file_content)
